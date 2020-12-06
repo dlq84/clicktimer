@@ -37,21 +37,6 @@ func run() int {
 	}
 	defer renderer.Destroy()
 
-	var peepArray []sdl.Event = make([]sdl.Event, 1)
-	id, err := window.GetID()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to get window ID: %s\n", err)
-		return 3
-	}
-	peepArray[0] = &sdl.UserEvent{
-		Type:      sdl.USEREVENT,
-		Timestamp: sdl.GetTicks(),
-		WindowID:  id,
-		Code:      1,
-		Data1:     nil,
-		Data2:     nil,
-	}
-
 	running = true
 	lastPushTime := sdl.GetTicks()
 
