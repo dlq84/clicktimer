@@ -82,7 +82,11 @@ func run() int {
 					if t.State == sdl.PRESSED {
 						if started {
 							reactionTime := t.Timestamp - startTick
-							if reactionTime < 100 {
+							if reactionTime == 69 {
+								fmt.Println("Nice")
+							} else if reactionTime == 420 {
+								fmt.Println("Blaze it!")
+							} else if reactionTime < 100 {
 								fmt.Println("Godlike!", reactionTime, "ms")
 							} else if reactionTime < 150 {
 								fmt.Println("Epic!", reactionTime, "ms")
@@ -91,7 +95,7 @@ func run() int {
 							} else if reactionTime < 300 {
 								fmt.Println("Average!", reactionTime, "ms")
 							} else {
-								fmt.Println("You're litterally garbage!", reactionTime, "ms")
+								fmt.Println("You're literally garbage!", reactionTime, "ms")
 							}
 							drawGreen(renderer)
 							sdl.Delay(2000)
